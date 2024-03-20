@@ -1,4 +1,5 @@
 import "./Card.css"
+import Colors from "./Colors";
 import Typography from "./Typography";
 
 function Card({children,image,title}) {
@@ -6,10 +7,14 @@ function Card({children,image,title}) {
     <div className="card">
         <img src={image}  className="img"/>
         <div className="card-body">
-            <Typography componentType="h3" color={{color:"white"}}>
+            <Typography componentType="h3" 
+                color={Colors.inverse} 
+                background={Colors.backgroundSecondary}>
                 {title}
             </Typography>
-            <Typography componentType="paragraph" color={{color:"white"}}>
+            <Typography componentType="paragraph" 
+                color={Colors.inverse} 
+                background={Colors.backgroundSecondary}>
                 {children}
             </Typography>
         </div>

@@ -1,21 +1,18 @@
 .card{
     background-color:  #94644A; 
     width: 216px;
-    height: 182px;
     padding: 8px;
     margin: 16px;
     border-radius: 12px;
-    font-family: "Roboto" , "san-serif";
+    font-family: "Roboto", sans-serif;
 }
 
 .text{
-    color: white;
     font-size: 14px;
 }
 
 .title{
     font-size: 18px;
-    color: white;
     font-weight: bold;
 }
 
