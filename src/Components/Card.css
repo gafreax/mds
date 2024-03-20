@@ -1,0 +1,23 @@
+.Card{
+background-color: #94644b;
+width: 216px;
+height: 182px;
+padding: 8px;
+border-radius: 12px;
+}
+.Text{
+    color: white;
+    font-family: monospace;
+    margin-top: 8px;
+}
+
+.Img{
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 192px;
+    height: 98px;
+    
+}
