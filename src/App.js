@@ -7,8 +7,10 @@ function App() {
     <>
       <Typography>Typography:normal</Typography>
       <br/>
-      <Typography title={true}>Typography:title</Typography>
-      <Card title="title" image="./SimpleCode.jpg">Card</Card>
+      <Typography color={{color:"#519c11"}}>Typography color</Typography>
+      <br/>
+      <Typography componentType="h1">Typography:title</Typography>
+      <Card title="card title" image="./SimpleCode.jpg">Card</Card>
     </>
   )
 }
