@@ -1,27 +1,25 @@
 .card{
-    background-color: #94644b;
+    background-color:  #94644A; 
     width: 216px;
     height: 182px;
     padding: 8px;
+    margin: 16px;
     border-radius: 12px;
+    font-family: "Roboto" , "san-serif";
 }
 
 .text{
     color: white;
-    font-family: monospace;
-    margin-top: 8px;
+    font-size: 14px;
 }
 
 .title{
-    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
 }
 
 .img{
     border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 192px;
-    height: 98px;
-    }
+    width: 100%;
+}

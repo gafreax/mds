@@ -1,7 +1,7 @@
 import "./Typography.css"
 function Typography ({children,title}){
     if (title) {
-        return <span className="title">{children}</span>
+        return <span className="component-h1">{children}</span>
     }
     return <span>{children}</span>
     
