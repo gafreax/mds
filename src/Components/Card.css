@@ -1,17 +1,22 @@
-.Card{
-background-color: #94644b;
-width: 216px;
-height: 182px;
-padding: 8px;
-border-radius: 12px;
+.card{
+    background-color: #94644b;
+    width: 216px;
+    height: 182px;
+    padding: 8px;
+    border-radius: 12px;
 }
-.Text{
+
+.text{
     color: white;
     font-family: monospace;
     margin-top: 8px;
 }
 
-.Img{
+.title{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.img{
     border-radius: 12px;
     display: flex;
     flex-direction: column;
@@ -19,5 +24,4 @@ border-radius: 12px;
     align-items: center;
     width: 192px;
     height: 98px;
-    
-}
+    }
