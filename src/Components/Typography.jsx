@@ -1,14 +1,13 @@
+import PropType from "prop-types"
 import Colors from "./Colors"
 import "./Typography.css"
 
-function Typography ({ children,componentType, color=Colors.default, background=Colors.backgroundDefault }){
+function Typography ({ children, componentType, color=Colors.default, background=Colors.backgroundDefault }){
 
-    
     const style = {
         ...color,
         ...background
     }
-
 
     switch(componentType) {
         case "h1" : 
@@ -25,4 +24,12 @@ function Typography ({ children,componentType, color=Colors.default, background=
     }
     
 }
+
+Typography.propTypes = {
+    children: PropType.string.isRequired,
+    componentType: PropType.string.isRequired,
+    color: PropType.object,
+    background: PropType.object,
+}
+
 export default Typography
