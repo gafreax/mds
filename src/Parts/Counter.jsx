@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import Typography from "./Typography"
-import Colors from "./Colors"
+import Typography from "../Components/Typography"
+import Colors from "../Components/Colors"
 
 async function updateImage(count, setImage) {
     const url = `https://picsum.photos/id/${count}/300/300`

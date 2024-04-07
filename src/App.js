@@ -1,20 +1,23 @@
 import { useEffect, useState } from 'react';
 
-import Button from './Components/Button';
-import Card from './Components/Card';
 import Container from './Components/Container';
-import Colors from './Components/Colors';
-import Counter from './Components/Counter';
+import Counter from './Parts/Counter';
 import Element from './Components/Element';
 import PageExample from './Components/PageExample';
 import Typography from './Components/Typography';
+import GridExample from './Parts/GridExample';
 
 import './App.css';
+import Toolbar from './Parts/Toolbar';
+import TypographyExample from './Parts/TypographyExample';
+import CardExample from './Parts/CardExample';
 
 const DEFAULT_VISIBLE_PARTS = {
   card: false,
   counter: false,
-  pageExample: false
+  grid: false,
+  pageExample: false,
+  typography: false
 }
 
 function App() {
@@ -23,48 +26,19 @@ function App() {
 
   useEffect(() => console.log("App renderizzata"))
 
-  return <Container>
-      <Element columns="mds-col-12">
-        <Typography componentType="h1">Typography:title</Typography>
-      </Element>
-      <Element columns="mds-col-3">
-          <Typography>Typography:normal</Typography><br/>
-      </Element>
-      <Element columns="mds-col-3">
-        <Typography color={Colors.primary}>Typography:color primary</Typography><br/>
-      </Element>
-      <Element columns="mds-col-3">
-        <Typography color={Colors.secondary}>Typography:color secondary</Typography><br/>
-      </Element>
-      <Element columns="mds-col-3">
-        <Typography background={Colors.backgroundInverse} color={Colors.inverse}>Typography:color secondary</Typography><br/>
-      </Element>
-      <Element columns="mds-col-12">
-        <Button
-          buttonState={ visibleParts.counter ? "active" : "normal" } 
-          onClick={() => setVisibleParts({...visibleParts, counter: !visibleParts.counter })}
-        >
-          Toggle Counter
-        </Button>
-        <Button
-          buttonState={ visibleParts.pageExample? "active": "normal" }
-          onClick={() => setVisibleParts({...visibleParts, pageExample: !visibleParts.pageExample })}
-        >
-          Toggle PageExample
-        </Button>
-        { visibleParts.pageExample && <PageExample /> }
-        <Button
-          buttonState="disabled"
-          onClick={() => setVisibleParts({...visibleParts, card: !visibleParts.card })}
-        >
-          Toggle Card
-        </Button>
-        { visibleParts.card && <Card title="card title" image="./SimpleCode.jpg">Card</Card> }
-      </Element>
-      <Element columns="mds-col-12">
-        { visibleParts.counter && <Counter /> }
-      </Element>
-    </Container>
+  return <>
+      <Container>
+        <Element columns={12}>
+          <Typography componentType="h1">Musa Desing System</Typography>
+        </Element>
+        <Toolbar currentState={[visibleParts, setVisibleParts]} />
+        { visibleParts.typography && <Element columns={12}><TypographyExample /></Element> }
+        { visibleParts.counter && <Element columns={12}><Counter /></Element> }        
+        { visibleParts.card &&<CardExample /> }
+        { visibleParts.pageExample && <Element columns={12}><PageExample /></Element> }
+      </Container>
+      { visibleParts.grid && <GridExample /> }
+    </>
 }
 
 export default App;

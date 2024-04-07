@@ -1,4 +1,4 @@
-import PropType from "prop-types"
+import PropTypes from "prop-types"
 import Colors from "./Colors"
 import "./Typography.css"
 
@@ -28,10 +28,20 @@ function Typography ({ children, componentType, color=Colors.default, background
 }
 
 Typography.propTypes = {
-    children: PropType.string.isRequired,
-    componentType: PropType.string.isRequired,
-    color: PropType.object,
-    background: PropType.object,
+    children: PropTypes.string.isRequired,
+    componentType: PropTypes.string,
+    background: PropTypes.oneOf([
+        Colors.backgroundDefault,
+        Colors.backgroundInverse,
+        Colors.backgroundPrimary,
+        Colors.backgroundSecondary
+    ]),
+    color: PropTypes.oneOf([
+        Colors.default,
+        Colors.inverse,
+        Colors.primary,
+        Colors.secondary
+    ])
 }
 
 export default Typography

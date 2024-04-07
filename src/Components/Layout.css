@@ -53,3 +53,49 @@
 .mds-col-12 {
     grid-column: span 12;
 }
+
+@media screen and (max-width: 992px) {
+    .mds-container {
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    .mds-col-1, 
+    .mds-col-2, 
+    .mds-col-3, 
+    .mds-col-4, 
+    .mds-col-5, 
+    .mds-col-6 {
+        grid-column: span 6;
+    } 
+
+    .mds-col-7, 
+    .mds-col-8, 
+    .mds-col-9, 
+    .mds-col-10,
+    .mds-col-11,
+    .mds-col-12 {
+        grid-column: span 12;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .mds-container {
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    .mds-col-1, 
+    .mds-col-2, 
+    .mds-col-3, 
+    .mds-col-4, 
+    .mds-col-5, 
+    .mds-col-6, 
+    .mds-col-7, 
+    .mds-col-8, 
+    .mds-col-9, 
+    .mds-col-10,
+    .mds-col-11,
+    .mds-col-12 {
+        grid-column: span 12;
+    }
+
+}
