@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react"
-import Typography from "../Components/Typography"
+
+import Button from "../Components/Button"
+import Card from "../Components/Card"
 import Colors from "../Components/Colors"
+import Typography from "../Components/Typography"
 
 async function updateImage(count, setImage) {
     const url = `https://picsum.photos/id/${count}/300/300`
@@ -13,7 +16,6 @@ async function updateImage(count, setImage) {
 function Counter() {
     const [count, setCount] = useState(0)
     const [image, setImage] = useState("")
-    
     useEffect(() => {
         console.log("ogni render")
     })
@@ -42,10 +44,13 @@ function Counter() {
     }
 
     return <>
-        <Typography componentType="h3" color={Colors.secondary}>{count}</Typography>
-        <img src={image} alt="immagine randomica" />
-        <button onClick={() => handleIncrement(count-1) }>Indietro</button>
-        <button onClick={() => handleIncrement(count+1) }>Avanti</button>
+        <Card title="immagine randomica" image={image}>
+            <Typography componentType="h3" color={Colors.inverse} background={Colors.backgroundSecondary}>{count}</Typography>
+            <Typography componentType="h3" color={Colors.inverse} background={Colors.backgroundSecondary}>Card</Typography>
+            <Button onClick={() => handleIncrement(count-1) }>Indietro</Button>
+            <Button onClick={() => handleIncrement(count+1) }>Avanti</Button>
+        </Card>
+
     </>
 }
 
