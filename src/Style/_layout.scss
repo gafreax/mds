@@ -1,6 +1,8 @@
+$max-col: 12;
+
 .mds-container {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat($max-col, 1fr);
     grid-gap: 8px;
     padding: 2px;
     margin: 2px;
@@ -51,12 +53,12 @@
 }
 
 .mds-col-12 {
-    grid-column: span 12;
+    grid-column: span $max-col;
 }
 
 @media screen and (max-width: 992px) {
     .mds-container {
-        grid-template-columns: repeat(12, 1fr);
+        grid-template-columns: repeat($max-col, 1fr);
     }
 
     .mds-col-1, 
@@ -74,13 +76,13 @@
     .mds-col-10,
     .mds-col-11,
     .mds-col-12 {
-        grid-column: span 12;
+        grid-column: span $max-col;
     }
 }
 
 @media screen and (max-width: 768px) {
     .mds-container {
-        grid-template-columns: repeat(12, 1fr);
+        grid-template-columns: repeat($max-col, 1fr);
     }
 
     .mds-col-1, 
@@ -95,7 +97,7 @@
     .mds-col-10,
     .mds-col-11,
     .mds-col-12 {
-        grid-column: span 12;
+        grid-column: span $max-col;
     }
 
 }
