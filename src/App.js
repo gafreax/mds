@@ -6,6 +6,7 @@ import Element from './Components/Element';
 import GridExample from './Parts/GridExample';
 import PageExample from './Components/PageExample';
 import Typography from './Components/Typography';
+import InputText from './Components/InputText';
 
 import CardExample from './Parts/CardExample';
 import Toolbar from './Parts/Toolbar';
@@ -33,12 +34,15 @@ function App() {
           <Typography componentType="h1">Musa Desing System</Typography>
         </Element>
         <Toolbar currentState={[visibleParts, setVisibleParts]} />
-        <Element columns={12}>
+        <Container>
+          <InputText label="prova" />
+        </Container>
+        <Container>
           { visibleParts.typography && <TypographyExample /> }
           { visibleParts.counter && <Counter /> }        
           { visibleParts.card && <CardExample /> }
           { visibleParts.pageExample && <PageExample /> }
-        </Element>
+        </Container>
       </Container>
       { visibleParts.grid && <GridExample /> }
     </>

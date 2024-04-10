@@ -1,10 +1,11 @@
 import Card from "../Components/Card"
 import Element from "../Components/Element"
+import Container from "../Components/Container"
 
 function CardExample() {
 
 
-    return <>
+    return <Container>
         <Element columns={4}>
             <Card title="card title" image="https://picsum.photos/seed/12/160/200">Card</Card>
         </Element>
@@ -14,7 +15,7 @@ function CardExample() {
         <Element columns={4}>
             <Card title="card title 2" image="https://picsum.photos/seed/34/160/200">Sono un'altra card</Card>
         </Element>
-    </>
+    </Container>
 }
 
 export default CardExample
