@@ -15,6 +15,12 @@ function Toolbar({ currentState }) {
                 Toggle Card
             </Button>
             <Button
+                buttonState={state.inputText ? "active" : "normal"}
+                onClick={() => setState({ ...state, inputText: !state.inputText })}
+            >
+                Toggle InputText
+            </Button>
+            <Button
                 buttonState={state.typography ? "active" : "normal"}
                 onClick={() => setState({ ...state, typography: !state.typography })}
             >

@@ -10,6 +10,7 @@ import Typography from './Components/Typography';
 import CardExample from './Parts/CardExample';
 import Toolbar from './Parts/Toolbar';
 import TypographyExample from './Parts/TypographyExample';
+import InputTextExample from './Parts/InputTextExample';
 
 import './Style/style.scss';
 
@@ -18,7 +19,8 @@ const DEFAULT_VISIBLE_PARTS = {
   counter: false,
   grid: false,
   pageExample: false,
-  typography: false
+  typography: false,
+  inputText: false
 }
 
 function App() {
@@ -33,12 +35,11 @@ function App() {
           <Typography componentType="h1">Musa Desing System</Typography>
         </Element>
         <Toolbar currentState={[visibleParts, setVisibleParts]} />
-        <Element columns={12}>
+          { visibleParts.inputText && <InputTextExample  />}
           { visibleParts.typography && <TypographyExample /> }
           { visibleParts.counter && <Counter /> }        
           { visibleParts.card && <CardExample /> }
           { visibleParts.pageExample && <PageExample /> }
-        </Element>
       </Container>
       { visibleParts.grid && <GridExample /> }
     </>
