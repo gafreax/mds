@@ -1,4 +1,4 @@
-import "./Button.css"
+import "./style.css"
 
 function calcBtnClasses(buttonState) {
     switch(buttonState) {
