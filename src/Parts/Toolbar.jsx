@@ -1,22 +1,24 @@
 import PropTypes from "prop-types"
+import { useNavigate } from "react-router-dom";
 
 import Button from "../Components/Button"
 import Element from "../Components/Element"
 
 function Toolbar({ currentState }) {
+    const navigate = useNavigate()
     const [state, setState] = currentState
 
     return <>
         <Element columns={4}>
             <Button
                 buttonState={state.card ? "active" : "normal"}
-                onClick={() => setState({ ...state, card: !state.card })}
+                onClick={() => { setState({ ...state, card: !state.card }); navigate("/home-card") } }
             >
                 Toggle Card
             </Button>
             <Button
                 buttonState={state.inputText ? "active" : "normal"}
-                onClick={() => setState({ ...state, inputText: !state.inputText })}
+                onClick={() => { setState({ ...state, inputText: !state.inputText }); navigate("/home-input") }}
             >
                 Toggle InputText
             </Button>
