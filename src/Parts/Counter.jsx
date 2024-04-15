@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import Button from "../Components/Button"
 import Card from "../Components/Card"
 import Colors from "../Components/Colors"
+import Element from "../Components/Element"
 import Typography from "../Components/Typography"
 
 async function updateImage(count, setImage) {
@@ -43,15 +44,14 @@ function Counter() {
         }
     }
 
-    return <>
+    return <Element columns={12}>
         <Card title="immagine randomica" image={image}>
             <Typography componentType="h3" color={Colors.inverse} background={Colors.backgroundSecondary}>{count}</Typography>
             <Typography componentType="h3" color={Colors.inverse} background={Colors.backgroundSecondary}>Card</Typography>
             <Button onClick={() => handleIncrement(count-1) }>Indietro</Button>
             <Button onClick={() => handleIncrement(count+1) }>Avanti</Button>
         </Card>
-
-    </>
+    </Element>
 }
 
 export default Counter

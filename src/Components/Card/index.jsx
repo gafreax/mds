@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
-import "./Card.css"
-import Colors from "./Colors";
-import Typography from "./Typography";
+
+import Colors from "../Colors";
+import Typography from "../Typography";
+
+import "./style.css"
 
 function Card({children, image, title}) {
 

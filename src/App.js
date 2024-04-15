@@ -4,7 +4,7 @@ import Container from './Components/Container';
 import Counter from './Parts/Counter';
 import Element from './Components/Element';
 import GridExample from './Parts/GridExample';
-import PageExample from './Components/PageExample';
+import PageExample from './Parts/PageExample';
 import Typography from './Components/Typography';
 
 import CardExample from './Parts/CardExample';

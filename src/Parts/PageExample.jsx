@@ -1,5 +1,7 @@
 import { useState } from "react"
 
+import Element from "../Components/Element"
+
 const DEFAULT_PARTI_ATTIVE = {
     sidebar: true,
     menu: false,
@@ -9,7 +11,7 @@ const DEFAULT_PARTI_ATTIVE = {
 function PageExample() {
     const [partiAttive, setPartiAttive] = useState(DEFAULT_PARTI_ATTIVE)
 
-    return <div>
+    return <Element columns={12}>
         <button onClick={() => setPartiAttive({ ...partiAttive, sidebar: !partiAttive.sidebar })}>
             {partiAttive.sidebar ? "nascondi sidebar" : "visualizza sidebar"}
         </button>
@@ -26,7 +28,7 @@ function PageExample() {
                 {partiAttive.content && <span className='content'> Ciao mondo sono un contenuto</span>}
             </div>
         </div>
-    </div>
+    </Element>
 }
 
 export default PageExample

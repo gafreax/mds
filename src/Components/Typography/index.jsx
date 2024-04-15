@@ -1,6 +1,8 @@
 import PropTypes from "prop-types"
-import Colors from "./Colors"
-import "./Typography.css"
+
+import Colors from "../Colors"
+
+import "./style.css"
 
 function Typography ({ children, componentType, color=Colors.default, background=Colors.backgroundDefault }){
 
