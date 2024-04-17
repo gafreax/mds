@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useReducer } from 'react';
 import { Link } from 'react-router-dom';
 
 import Container from '../Components/Container';
@@ -15,17 +15,29 @@ import InputTextExample from '../Parts/InputTextExample';
 
 import '../Style/style.scss';
 
+const initalState = {
+    card: false,
+    counter: true,
+    grid: false,
+    pageExample: false,
+    typography: false,
+    inputText: false
+}
+
+function reducer(state, action) {
+    switch (action.type) {
+        case "card": return { ...state, card: !state.card }
+        case "counter": return { ...state, counter: !state.counter }
+        case "grid": return { ...state, grid: !state.grid }
+        case "pageExample": return { ...state, pageExample: !state.pageExample }
+        case "typography": return { ...state, typography: !state.typography }
+        case "inputText": return { ...state, inputText: !state.inputText }
+        default: return initalState
+    }
+}
 
 function Home({show}) {
-    const [visibleParts, setVisibleParts] = useState({
-        card: show === "card",
-        counter: false,
-        grid: false,
-        pageExample: false,
-        typography: false,
-        inputText: show === "input"
-    })
-
+    const [state, dispatch] = useReducer(reducer, initalState);
 
     useEffect(() => console.log("App renderizzata"))
 
@@ -38,14 +50,14 @@ function Home({show}) {
                 <Typography ><Link to="/help">Help</Link></Typography>
             </Element>
             
-            <Toolbar currentState={[visibleParts, setVisibleParts]} />
-            {visibleParts.inputText && <InputTextExample />}
-            {visibleParts.typography && <TypographyExample />}
-            {visibleParts.counter && <Counter />}
-            {visibleParts.card && <CardExample />}
-            {visibleParts.pageExample && <PageExample />}
+            <Toolbar currentState={[state, dispatch]} />
+            {state.inputText && <InputTextExample />}
+            {state.typography && <TypographyExample />}
+            {state.counter && <Counter />}
+            {state.card && <CardExample />}
+            {state.pageExample && <PageExample />}
         </Container>
-        {visibleParts.grid && <GridExample />}
+        {state.grid && <GridExample />}
     </>
 }
 
