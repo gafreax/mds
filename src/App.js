@@ -20,7 +20,7 @@ function App() {
             </Routes>
         </Router>
     )
-gi}
+}
 
 export default App;
 
