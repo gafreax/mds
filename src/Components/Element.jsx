@@ -2,7 +2,7 @@ import PropTypes from "prop-types"
 
 import Colors from "./Colors"
 
-function Element({children, columns, color=Colors.default, className, background=Colors.backgroundDefault}) {
+function Element({children, columns = 12, color=Colors.default, className, background=Colors.backgroundDefault}) {
     const style = {
         ...color,
         ...background

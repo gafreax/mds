@@ -1,49 +1,26 @@
-import { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import Container from './Components/Container';
-import Counter from './Parts/Counter';
-import Element from './Components/Element';
-import GridExample from './Parts/GridExample';
-import PageExample from './Parts/PageExample';
-import Typography from './Components/Typography';
-
-import CardExample from './Parts/CardExample';
-import Toolbar from './Parts/Toolbar';
-import TypographyExample from './Parts/TypographyExample';
-import InputTextExample from './Parts/InputTextExample';
-
-import './Style/style.scss';
-
-const DEFAULT_VISIBLE_PARTS = {
-  card: false,
-  counter: false,
-  grid: false,
-  pageExample: false,
-  typography: false,
-  inputText: false
-}
+import Card from './Pages/Card';
+import Help from './Pages/Help';
+import Home from './Pages/Home';
+import NotFound from './Pages/NotFound';
+import Welcome from './Pages/Welcome';
 
 function App() {
-  const [visibleParts, setVisibleParts] = useState(DEFAULT_VISIBLE_PARTS)
-
-
-  useEffect(() => console.log("App renderizzata"))
-
-  return <>
-      <Container>
-        <Element columns={12}>
-          <Typography componentType="h1">Musa Desing System</Typography>
-        </Element>
-        <Toolbar currentState={[visibleParts, setVisibleParts]} />
-          { visibleParts.inputText && <InputTextExample  />}
-          { visibleParts.typography && <TypographyExample /> }
-          { visibleParts.counter && <Counter /> }        
-          { visibleParts.card && <CardExample /> }
-          { visibleParts.pageExample && <PageExample /> }
-      </Container>
-      { visibleParts.grid && <GridExample /> }
-    </>
-}
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path='/home-card' element={<Home show="card" />} />
+                <Route path='/home-input' element={<Home show="input" />} />
+                <Route path='/help' element={<Help />} />
+                <Route path='/welcome/:firstname/:lastname' element={<Welcome />} />
+                <Route path='/card/:id' element={<Card />} />
+                <Route path="*" element={<NotFound />} />
+            </Routes>
+        </Router>
+    )
+gi}
 
 export default App;
 
