@@ -6,31 +6,31 @@ import Element from "../Components/Element"
 
 function Toolbar({ currentState }) {
     const navigate = useNavigate()
-    const [state, setState] = currentState
+    const [state, dispatch] = currentState
 
     return <>
         <Element columns={4}>
             <Button
                 buttonState={state.card ? "active" : "normal"}
-                onClick={() => { setState({ ...state, card: !state.card }); navigate("/home-card") } }
+                onClick={() => { dispatch({type: "card"}); navigate("/home-card") } }
             >
                 Toggle Card
             </Button>
             <Button
                 buttonState={state.inputText ? "active" : "normal"}
-                onClick={() => { setState({ ...state, inputText: !state.inputText }); navigate("/home-input") }}
+                onClick={() => { dispatch({type: "inputText"}); navigate("/home-input") }}
             >
                 Toggle InputText
             </Button>
             <Button
                 buttonState={state.typography ? "active" : "normal"}
-                onClick={() => setState({ ...state, typography: !state.typography })}
+                onClick={() => dispatch({type: "typography"})}
             >
                 Toggle Typography
             </Button>
             <Button
                 buttonState={state.grid ? "active" : "normal"}
-                onClick={() => setState({ ...state, grid: !state.grid })}
+                onClick={() => dispatch({type: "grid"})}
             >
                 Toggle Grid
             </Button>
@@ -38,13 +38,13 @@ function Toolbar({ currentState }) {
         <Element columns={6} className="hidden_on_print">
             <Button
                 buttonState={state.counter ? "active" : "normal"}
-                onClick={() => setState({ ...state, counter: !state.counter })}
+                onClick={() => dispatch({type: "counter"})}
             >
                 Toggle Counter
             </Button>
             <Button
                 buttonState={state.pageExample ? "active" : "normal"}
-                onClick={() => setState({ ...state, pageExample: !state.pageExample })}
+                onClick={() => dispatch({type: "pageExample"})}
             >
                 Toggle PageExample
             </Button>
